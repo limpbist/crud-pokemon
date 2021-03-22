@@ -32,8 +32,9 @@
   "author": "crud-pokemon",
   "license": "MIT",
   "dependencies": {
-    "lit-html": "^1.3.0",
-    "lit-element": "^2.4.0"
+    "@vaadin/vaadin": "^19.0.2",
+    "lit-element": "^2.4.0",
+    "lit-html": "^1.3.0"
   },
   "eslintConfig": {
     "extends": [
