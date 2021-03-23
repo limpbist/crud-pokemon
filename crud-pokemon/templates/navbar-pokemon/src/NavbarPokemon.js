@@ -1,5 +1,5 @@
 import { html, css, LitElement } from 'lit-element';
-
+'use strict'
 export class NavbarPokemon extends LitElement {
   static get styles() {
     return css`
@@ -30,8 +30,12 @@ export class NavbarPokemon extends LitElement {
       padding:18px;
     }
     #logo h3{
-      font-size:28px;
+      font-size:1.4em;
       transtion:all 300ms;
+      font-weight:bold;
+      color: #0085b6;
+      color: hsl(196.2, 100%, 35.7%);
+      background-color:#fae6fa;
     }
     #logo .pokeball{
       font-size:28px;
@@ -65,12 +69,14 @@ export class NavbarPokemon extends LitElement {
 
   static get properties() {
     return {
-      optionNavigation: { type: String }
+      title: { type: String },
+      optionNavigation: { type: Array }
     };
   }
 
   constructor() {
     super();
+    this.title = 'POKE CRUD'
     this.optionNavigation = ['INICIO', 'MIS POKEMONS', 'REGISTRATE'];
   }
 
@@ -80,11 +86,13 @@ export class NavbarPokemon extends LitElement {
       <div class="wrap">
         <div id="logo">
           <span class="pokeball">P</span>
-          <h3>POKE CRUD</h3>
+          <h3>${this.title}</h3>
         </div>
         <nav id="menu">
           ${this.optionNavigation.map(element => html`
-          <li><a>${element}</a></li>
+          <ul>
+            <li><a>${element}</a></li>
+          </ul>
           `)}
         </nav>
       </div>
