@@ -31,13 +31,13 @@ describe('NavbarPokemon', () => {
         </nav>`);
     expect(el).to.have.id('menu');
   });
-  it('El array de elementos',async()=>{
+  it('El array de elementos', async () => {
     const el = await fixture(html`<navbar-pokemon></navbar-pokemon>`)
-    expect(el.optionNavigation,'verifique el número de opciones del menú').to.have.lengthOf(3);
+    expect(el.optionNavigation, 'verifique el número de opciones del menú').to.have.lengthOf(3);
   });
-  it('El array de elementos',async()=>{
+  it('El array de elementos', async () => {
     const el = await fixture(html`<navbar-pokemon></navbar-pokemon>`)
-    expect(el.optionNavigation,'verifique los nombres de las opciones del menú').to.deep.equal(['INICIO', 'MIS POKEMONS', 'REGISTRATE']);
+    expect(el.optionNavigation, 'verifique los nombres de las opciones del menú').to.deep.equal(['INICIO', 'MIS POKEMONS', 'REGISTRATE']);
   });
   it('passes the a11y audit', async () => {
     const el = await fixture(html`<navbar-pokemon></navbar-pokemon>`);
